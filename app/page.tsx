@@ -106,36 +106,28 @@ export default function Home() {
     >
       {/* Header - Fixed at top */}
       <AppBar
-        position="sticky"
+        position="fixed"
         elevation={0}
         sx={{
           top: 0,
+          left: 0,
+          right: 0,
           zIndex: 1100,
           bgcolor: 'background.default',
           backdropFilter: 'blur(8px)',
           borderBottom: 1,
           borderColor: 'divider',
-          flexShrink: 0,
         }}
       >
         <Toolbar sx={{ minHeight: { xs: '56px', sm: '64px' } }}>
           <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 } }}>
-            <Box>
-              <Typography
-                variant="h1"
-                color="text.primary"
-                sx={{ fontSize: { xs: '1.125rem', sm: '1.25rem' } }}
-              >
-                Checcolino.ai
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ mt: 0.5, fontSize: { xs: '0.8125rem', sm: '0.875rem' } }}
-              >
-                Conversazione con la persona AI
-              </Typography>
-            </Box>
+            <Typography
+              variant="h1"
+              color="text.primary"
+              sx={{ fontSize: { xs: '1.125rem', sm: '1.25rem' }, fontWeight: 600 }}
+            >
+              Checcolino.ai
+            </Typography>
           </Container>
         </Toolbar>
       </AppBar>
@@ -148,6 +140,8 @@ export default function Home() {
           overflowX: 'hidden',
           WebkitOverflowScrolling: 'touch',
           position: 'relative',
+          // Account for fixed header
+          mt: { xs: '56px', sm: '64px' },
           // Ensure content is not hidden behind sticky input
           scrollPaddingBottom: '120px',
         }}
@@ -215,19 +209,20 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Input Area - Sticky at bottom */}
+      {/* Input Area - Fixed at bottom */}
       <Paper
         elevation={0}
         sx={{
-          position: 'sticky',
+          position: 'fixed',
           bottom: 0,
+          left: 0,
+          right: 0,
           zIndex: 1100,
           borderTop: 1,
           borderColor: 'divider',
           bgcolor: 'background.default',
           backdropFilter: 'blur(8px)',
           py: { xs: 1.5, sm: 2.5 },
-          flexShrink: 0,
           // Safe area for iOS devices
           pb: { xs: 'calc(1.5rem + env(safe-area-inset-bottom))', sm: 2.5 },
         }}
