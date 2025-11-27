@@ -22,8 +22,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Chat with Francesco (Checcolino)",
-  description: "Conversa con la persona AI di Francesco",
+  title: "Checcolino.ai",
+  description: "Inizia una nuova chat con Checcolino",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
