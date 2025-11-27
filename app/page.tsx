@@ -121,7 +121,7 @@ export default function Home() {
                 color="text.primary"
                 sx={{ fontSize: { xs: '1.125rem', sm: '1.25rem' } }}
               >
-                Chat with Francesco
+                Checcolino.ai
               </Typography>
               <Typography
                 variant="body2"
@@ -189,7 +189,7 @@ export default function Home() {
                     <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                       <CircularProgress size={16} thickness={5} />
                       <Typography variant="body2" color="text.secondary">
-                        Sto pensando...
+                        Sta scrivendo...
                       </Typography>
                     </Box>
                   </Paper>
