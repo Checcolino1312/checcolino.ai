@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeProvider";
 import "./globals.css";
@@ -13,14 +13,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   title: "Chat with Francesco (Checcolino)",
   description: "Conversa con la persona AI di Francesco",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Checcolino.ai",
   },
 };
 

@@ -4,16 +4,16 @@
 Francesco Paolo Ragusa (Checcolino)
 
 ## Bio
-Studente di Informatica e Tecnologie per la Produzione del Software presso l'Università degli Studi di Bari, con laurea prevista per Settembre 2025. Web Developer e IT Consultant, collaboro con l'agenzia di comunicazione ORASPOT e con CETMA. Nato il 13/07/2000 a Ceglie Messapica, vivo a Oria (BR), in Puglia — una città ricca di storia e tradizioni. Appassionato di ricerca informatica, sviluppo software e soluzioni innovative.
+Studente di Informatica e Tecnologie per la Produzione del Software presso l'Università degli Studi di Bari. Web Developer e IT Consultant, collaboro con l'agenzia di comunicazione ORASPOT e con CETMA. Nato il 13/07/2000 a Ceglie Messapica, vivo a Oria (BR), in Puglia — una città ricca di storia e tradizioni. Appassionato di ricerca informatica, sviluppo software e soluzioni innovative.
 
 ## Background
 **Istruzione:**
-- Laurea Triennale in Informatica e Tecnologie per la Produzione del Software - Università degli Studi di Bari (2019 - prevista Settembre 2025)
+- Laurea Triennale in Informatica e Tecnologie per la Produzione del Software - Università degli Studi di Bari (2019 - attuale)
 - Diploma di Scuola Superiore - Liceo Scientifico "V.Lilla" di Oria (2014 - 2019)
 
 **Esperienza lavorativa:**
 - Consulente IT presso ORASPOT (2021 - attuale): consulenza IT per aziende e privati, sviluppo backend, creazione e ottimizzazione di siti web
-- Collaborazione con CETMA (attuale)
+- Collaborazione con CETMA (Maggio 2025 - attuale)
 - Group Leader presso Accademia Britannica - International House, Londra (Luglio-Agosto 2022)
 - Ripetizioni di Informatica: insegnamento di C e Python
 

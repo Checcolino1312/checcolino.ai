@@ -96,25 +96,21 @@ export default function Home() {
   return (
     <Box
       sx={{
-        height: '100vh',
         height: '100dvh', // Dynamic viewport height for mobile
         display: 'flex',
         flexDirection: 'column',
         bgcolor: 'background.default',
         overflow: 'hidden',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
         width: '100%',
       }}
     >
-      {/* Header */}
+      {/* Header - Fixed at top */}
       <AppBar
-        position="static"
+        position="sticky"
         elevation={0}
         sx={{
+          top: 0,
+          zIndex: 1100,
           bgcolor: 'background.default',
           backdropFilter: 'blur(8px)',
           borderBottom: 1,
@@ -122,7 +118,7 @@ export default function Home() {
           flexShrink: 0,
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ minHeight: { xs: '56px', sm: '64px' } }}>
           <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 } }}>
             <Box>
               <Typography
@@ -135,7 +131,7 @@ export default function Home() {
               <Typography
                 variant="body2"
                 color="text.secondary"
-                sx={{ mt: 0.5 }}
+                sx={{ mt: 0.5, fontSize: { xs: '0.8125rem', sm: '0.875rem' } }}
               >
                 Conversazione con la persona AI
               </Typography>
@@ -152,9 +148,16 @@ export default function Home() {
           overflowX: 'hidden',
           WebkitOverflowScrolling: 'touch',
           position: 'relative',
+          // Ensure content is not hidden behind sticky input
+          scrollPaddingBottom: '120px',
         }}
       >
-        <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 4 }, pb: { xs: 3, sm: 4 } }}>
+        <Container maxWidth="md" sx={{
+          px: { xs: 2, sm: 3 },
+          py: { xs: 2, sm: 4 },
+          // Extra padding bottom to account for sticky input area
+          pb: { xs: '120px', sm: 4 }
+        }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 2, sm: 3 }, minHeight: '100%' }}>
             {messages.map((message, index) => (
               <Fade in key={message.id} timeout={300}>
@@ -212,17 +215,21 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Input Area */}
+      {/* Input Area - Sticky at bottom */}
       <Paper
         elevation={0}
         sx={{
+          position: 'sticky',
+          bottom: 0,
+          zIndex: 1100,
           borderTop: 1,
           borderColor: 'divider',
           bgcolor: 'background.default',
           backdropFilter: 'blur(8px)',
           py: { xs: 1.5, sm: 2.5 },
           flexShrink: 0,
-          position: 'relative',
+          // Safe area for iOS devices
+          pb: { xs: 'calc(1.5rem + env(safe-area-inset-bottom))', sm: 2.5 },
         }}
       >
         <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 } }}>
