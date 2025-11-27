@@ -14,10 +14,13 @@ export function MessageContent({ content }: MessageContentProps) {
   return (
     <Box
       sx={{
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
         '& p': {
           color: 'text.primary',
           lineHeight: 1.6,
           margin: '0.5em 0',
+          fontSize: { xs: '0.9375rem', sm: '1rem' },
           '&:first-of-type': { marginTop: 0 },
           '&:last-of-type': { marginBottom: 0 },
         },
@@ -41,14 +44,18 @@ export function MessageContent({ content }: MessageContentProps) {
           border: 1,
           borderColor: 'divider',
           borderRadius: 2,
-          p: 2,
+          p: { xs: 1.5, sm: 2 },
           overflowX: 'auto',
           my: 1.5,
+          maxWidth: '100%',
+          WebkitOverflowScrolling: 'touch',
           '& code': {
             bgcolor: 'transparent',
             px: 0,
             py: 0,
-            fontSize: '0.875rem',
+            fontSize: { xs: '0.8125rem', sm: '0.875rem' },
+            wordBreak: 'break-word',
+            whiteSpace: 'pre-wrap',
           },
         },
         '& ul, & ol': {
