@@ -96,21 +96,30 @@ export default function Home() {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
+        height: '100vh',
+        height: '100dvh', // Dynamic viewport height for mobile
         display: 'flex',
         flexDirection: 'column',
         bgcolor: 'background.default',
+        overflow: 'hidden',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: '100%',
       }}
     >
       {/* Header */}
       <AppBar
-        position="sticky"
+        position="static"
         elevation={0}
         sx={{
           bgcolor: 'background.default',
           backdropFilter: 'blur(8px)',
           borderBottom: 1,
           borderColor: 'divider',
+          flexShrink: 0,
         }}
       >
         <Toolbar>
@@ -140,11 +149,13 @@ export default function Home() {
         sx={{
           flex: 1,
           overflowY: 'auto',
-          pb: 2,
+          overflowX: 'hidden',
+          WebkitOverflowScrolling: 'touch',
+          position: 'relative',
         }}
       >
-        <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 }, py: { xs: 3, sm: 4 } }}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 4 }, pb: { xs: 3, sm: 4 } }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 2, sm: 3 }, minHeight: '100%' }}>
             {messages.map((message, index) => (
               <Fade in key={message.id} timeout={300}>
                 <Box
@@ -209,7 +220,9 @@ export default function Home() {
           borderColor: 'divider',
           bgcolor: 'background.default',
           backdropFilter: 'blur(8px)',
-          py: { xs: 2, sm: 2.5 },
+          py: { xs: 1.5, sm: 2.5 },
+          flexShrink: 0,
+          position: 'relative',
         }}
       >
         <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 } }}>
@@ -227,7 +240,7 @@ export default function Home() {
               sx={{
                 '& .MuiOutlinedInput-root': {
                   bgcolor: 'background.paper',
-                  minHeight: '56px',
+                  minHeight: { xs: '48px', sm: '56px' },
                   alignItems: 'flex-end',
                 },
               }}
@@ -238,9 +251,9 @@ export default function Home() {
               disabled={!input.trim() || isLoading}
               endIcon={!isMobile && <SendIcon />}
               sx={{
-                minWidth: { xs: '56px', sm: '120px' },
-                height: '56px',
-                px: { xs: 2, sm: 3 },
+                minWidth: { xs: '48px', sm: '120px' },
+                height: { xs: '48px', sm: '56px' },
+                px: { xs: 1.5, sm: 3 },
               }}
             >
               {isMobile ? <SendIcon /> : 'Invia'}
