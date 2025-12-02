@@ -33,10 +33,16 @@ export default function Home() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Focus input on mount
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
@@ -51,6 +57,9 @@ export default function Home() {
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+
+    // Keep focus on input after sending
+    setTimeout(() => inputRef.current?.focus(), 0);
 
     try {
       const response = await fetch('/api/chat', {
@@ -83,6 +92,8 @@ export default function Home() {
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      // Re-focus input after response
+      setTimeout(() => inputRef.current?.focus(), 0);
     }
   };
 
@@ -239,6 +250,7 @@ export default function Home() {
               placeholder="Scrivi un messaggio..."
               disabled={isLoading}
               variant="outlined"
+              inputRef={inputRef}
               sx={{
                 '& .MuiOutlinedInput-root': {
                   bgcolor: 'background.paper',
