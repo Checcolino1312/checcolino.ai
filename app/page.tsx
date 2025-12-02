@@ -150,7 +150,7 @@ export default function Home() {
           px: { xs: 2, sm: 3 },
           py: { xs: 2, sm: 4 },
           // Extra padding bottom to account for sticky input area
-          pb: { xs: '120px', sm: 4 }
+          pb: { xs: '140px', sm: '140px' }
         }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 2, sm: 3 }, minHeight: '100%' }}>
             {messages.map((message, index) => (
